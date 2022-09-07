@@ -1,4 +1,4 @@
-# Marketplace-Web-App
+# Marketplace-Web-Application
 A web application that lets users list and view items for sale.
 
 * This is a final project of the CS50x Course.
