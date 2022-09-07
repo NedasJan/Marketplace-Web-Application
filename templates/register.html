@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}Marketplace: Register{% endblock %}
+
+{% block main %}
+        <section class="my-5">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card bg-dark text-white shadow-lg" style="border-radius: 0.75rem;">
+                            <div class="card-body p-5 text-center">
+                                <h2 class="fw-bold mb-2 text-uppercase">Register</h2>
+                                <p class="text-white-50 mb-5">Fill in the registration form</p>
+                        
+                                <form action="/register" method="post">
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="text" class="form-control form-control-lg" name="first_name" placeholder="First name" autocomplete="off" required/>
+                                    </div>
+
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="text" class="form-control form-control-lg" name="last_name" placeholder="Last name" autocomplete="off" required/>
+                                    </div>
+
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="text" class="form-control form-control-lg" name="username" placeholder="Username" autocomplete="off" required/>
+                                    </div>
+
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="email" class="form-control form-control-lg" name="email_address" placeholder="Email address" autocomplete="off" required/>
+                                    </div>
+                        
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="password" class="form-control form-control-lg" name="password" id="password"placeholder="Password" autocomplete="off" required/>
+                                    </div>
+
+                                    <div class="form-outline form-white mb-5">
+                                        <input type="password" class="form-control form-control-lg" name="password_confirmation" id="confirmation" placeholder="Repeat password" autocomplete="off" required/>
+                                    </div>  
+                                        
+                                    <button type="submit" class="btn btn-outline-light btn-lg px-5 mb-5" onclick="validatePassword()">Register</button>
+                                </form>
+
+                                <div>
+                                    <p>Already have an account? <a class="text-white-50 fw-bold" href="/login">Log in</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function validatePassword() {
+                var password = document.getElementById("password");
+                var confirmation = document.getElementById("confirmation");
+    
+                if (password.value != confirmation.value) {
+                    confirmation.setCustomValidity("Passwords don't match!");
+                } else {
+                    confirmation.setCustomValidity("");
+                }
+            }
+        </script>
+{% endblock %}

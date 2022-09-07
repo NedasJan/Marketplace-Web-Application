@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}Marketplace: Listing details{% endblock %}
+
+{% block main %}
+<div class="container mb-5 mt-5">
+    <div class="col-12 col-sm-12 col-md-12">
+        <div class="card bg-dark" style="border-radius: 0.75rem;">
+            <div class="card-header">
+                <h4>Details</h4>
+            </div>
+    
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="row gx-4 gx-lg-5 align-items-top">
+                    <div class="col-md-6 shadow border-white" style="border-radius: 0.75rem;">
+                        <img class="card-img-top listing-image mb-5 mb-md-0" src="static/images/{{ listing[0] }}" alt="image" />
+                    </div>
+            
+                    <div class="col-md-5 mt-4 mt-md-0">
+                        <h1 class="display-5 fw-bolder mb-4">{{ listing[1] }}</h1>
+        
+                        <div class="fs-5">
+                            <p class="lead">Price: {{ listing[2] }} EUR</p>
+                            <p class="lead">Condition: {{ listing[3] }}</p>
+                            <p class="lead">Seller's email: {{ email_address }}</p>
+                            <p class="lead">City: {{ listing[4] }}</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <p class="lead mt-0 mt-md-4">Item description: {{ listing[5] }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

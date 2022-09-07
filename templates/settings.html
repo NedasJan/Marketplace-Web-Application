@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}Marketplace: Settings{% endblock %}
+
+{% block main %}
+        <div class="container mt-5">
+            <div class="col-12 col-sm-12 col-md-12">
+                <div class="card bg-dark" style="border-radius: 0.75rem;">
+                    <div class="card-header">
+                        <h4>Change password</h4>
+                    </div>
+
+                    <form class="row px-5 py-5" action="/password" method="post">
+                        <div class="form-outline form-white col-12 col-md-3 mb-4">
+                            <input type="password" class="form-control form-control-lg" name="old_password" placeholder="Old password" autocomplete="off" required>
+                        </div>
+
+                        <div class="form-outline form-white col-12 col-md-3 mb-4">
+                            <input type="password" class="form-control form-control-lg" name="password" id="password" placeholder="New password" autocomplete="off" required>
+                        </div>
+
+                        <div class="form-outline form-white col-12 col-md-3 mb-4">
+                            <input type="password" class="form-control form-control-lg" name="confirmation" id="confirmation" placeholder="Repeat new password" autocomplete="off" required>
+                        </div>
+
+                        <button type="submit"  class="btn btn-outline-light btn-lg col-12 col-md-2 ms-0 ms-md-2 mb-4" onclick="validatePassword()">Change</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function validatePassword() {
+                var password = document.getElementById("password");
+                var confirmation = document.getElementById("confirmation");
+    
+                if (password.value != confirmation.value) {
+                    confirmation.setCustomValidity("Passwords don't match!");
+                } else {
+                    confirmation.setCustomValidity("");
+                }
+            }
+        </script>
+{% endblock %}

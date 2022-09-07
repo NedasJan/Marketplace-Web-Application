@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}Marketplace: Login{% endblock %}
+
+{% block main %}
+        <section class="my-5">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card bg-dark text-white shadow-lg" style="border-radius: 0.75rem;">
+                            <div class="card-body p-5 text-center">                            
+                                <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                                <p class="text-white-50 mb-5">Enter your login and password</p>
+
+                                <form action="/login" method="post">
+                                     <div class="form-outline form-white mb-4">
+                                        <input name="identification" type="text" class="form-control form-control-lg" autocomplete="off" placeholder="Email or Username"/>
+                                    </div>
+
+                                    <div class="form-outline form-white mb-5">
+                                        <input name="password" type="password" class="form-control form-control-lg" autocomplete="off" placeholder="Password"/>
+                                    </div>
+
+                                    <button class="btn btn-outline-light btn-lg px-5 mb-5" type="submit">Login</button>
+                                </form>             
+
+                                <div>
+                                    <p>Don't have an account? <a class="text-white-50 fw-bold" href="/register" >Sign Up</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

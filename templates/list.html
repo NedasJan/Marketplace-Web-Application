@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}Marketplace: {{ heading }}{% endblock %}
+
+{% block main %}
+        <section class="vh-150 gradient-custom">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-10 col-lg-10 col-xl-10">
+                        <div class="card bg-dark text-white shadow-lg" style="border-radius: 0.75rem;">
+                            <div class="card-body p-5 text-center">
+                                <h2 class="fw-bold mb-2 text-uppercase">{{ heading }}</h2>
+                                <p class="text-white-50 mb-5">Fill in the listing form</p>
+                        
+                                <form action="/list" method="post" enctype="multipart/form-data">
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="text" class="form-control form-control-lg" name="title" placeholder="Title" autocomplete="off" required/>
+                                    </div>
+
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="text" class="form-control form-control-lg" name="description" placeholder="Description" autocomplete="off" required/>
+                                    </div>
+
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="text" class="form-control form-control-lg" name="city" placeholder="City" autocomplete="off" required/>
+                                    </div>
+
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="text" class="form-control form-control-lg" name="condition" placeholder="Condition (new or used)" autocomplete="off" required/>
+                                    </div>
+
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="number" class="form-control form-control-lg" name="price" placeholder="Price (EUR)" min="0" step="0.01" autocomplete="off" required/>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="btn btn-light mb-4" id="imageInput" onchange="changeBackground()">
+                                            <i class="fa fa-image"></i>Upload an image<input type="file" name="image" style="display: none;" required>
+                                        </label> 
+                                    </div>
+                                        
+                                    <button type="submit" class="btn btn-outline-light btn-lg px-5">List</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function changeBackground() {
+                document.getElementById("imageInput").style.backgroundColor = "green";
+            }
+        </script>
+{% endblock %}
