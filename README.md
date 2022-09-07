@@ -1,6 +1,8 @@
 # Marketplace-Web-App
 A web application that lets users list and view items for sale.
 
+* This is a final project of the CS50x Course *
+
 How to run (Mac OS):
 
 1. Open the terminal.
